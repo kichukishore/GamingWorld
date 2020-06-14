@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head><title>FORMS</title>
+<script type="text/javascript">
+function checkForm(form)
+  {
+    if(form.fn.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.fn.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.fn.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.fn.focus();
+      return false;
+    }
+if(form.dn.value != "") {
+re=/^\d{1,4}$/;
+if(!re.test(form.dn.value))
+{
+alert("DOOR NUMBER SHOULD CONTAIN ONLY 4 DIGIT NUMBERS !");
+form.dn.focus();
+return false;
+}
+}
+else{
+  alert("Error: DOOR NUMBER cannot be blank!");
+      form.dn.focus();
+      return false;
+    }
+
+  if(form.sl.value != "") {
+  re=/[a-zA-Z]/;
+  if(!re.test(form.sl.value)){
+  alert("street name must contain only alphabets");
+  form.sl.focus();
+  return false;
+  }}
+  else
+  {
+      alert("street name cannot be blank!");
+      form.sl.focus();
+      return false;
+    }
+  
+  
+  if(form.zp.value != "") {
+  
+  re=/^\d{6}$/;
+  if(!re.test(form.zp.value))
+  {
+     alert("must contain only 6 digit numbers!");
+   form.zp.focus();
+   return false;
+   }
+   }
+   else{
+      alert("zipcode cannot be blank!");
+      form.zp.focus();
+      return false;
+    }
+  
+  if(form.zp.value==632001)
+  {
+  document.frm.ds.value="vellore";
+  document.frm.st.value="tamilnadu";
+  document.frm.ct.value="vellore";
+  }
+  
+  if(form.zp.value==600049)
+  {
+  document.frm.ds.value="chennai";
+  document.frm.st.value="tamilnadu";
+  document.frm.ct.value="chennai";
+  }
+  if(form.mb.value != "") {
+  
+  re=/^\d{10}$/;
+  if(!re.test(form.mb.value)){
+  alert("mobile number should contain 10 digit numbers only!");
+  form.mb.focus();
+  return false;
+  }
+  }
+  else{
+  
+      alert("Error: MOBILE NUMBER cannot be blank!");
+      form.mb.focus();
+      return false;
+    }
+  
+  if(form.rd.value=="")
+  {
+  alert("gender cannot be none! ");
+  form.mb.focus();
+  return false;
+  }
+  
+  if(form.em.value!="")
+  {
+  re=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  if(!re.test(form.em.value)){
+  alert("check your mail format !");
+  form.em.focus();
+  return false;
+  }}
+  else{
+  alert("mail id cannot be blank!");
+  form.em.focus();
+  return false;
+  
+  }
+if(form.pwd1.value != ""&& form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.fn.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+ alert("Your form is successfully created! ");
+      return true;
+  }</script>
+<style>
+.a{
+background-color:blue;
+color:white;
+font-size:20px;
+border:1;
+}
+#b{
+font-size:70px;
+color: aqua;
+background-color: black;
+font-family:Monotype Corsiva;
+}
+body{
+background-image:url("web55.jpg");
+}
+</style>
+</head>
+<body>
+  
+  <a href="3.html"><img src="web44.jpg" height="60" width="60" align="right"></a>
+<div id="b"><marquee>Sign Up</marquee></div><br/>
+<center>
+<table border="1" cellspacing="5" cellpadding="7" style="background-color:black; color: white">
+<tr>
+<td><form onsubmit="return checkForm(this);" name="frm"><b>USER_NAME*:</b><br/><br/>
+<input type="text" placeholder="user name" name="fn"/>&nbsp;
+</td></tr>
+<tr>
+<td><b>ADDRESS*:</b><br/><br/>
+DOOR_NO. &nbsp;<input type="text" placeholder="Door no." name="dn"/>&nbsp;
+STREET NAME &nbsp; <input type="text" placeholder="street/lane." name="sl"/>&nbsp;
+<br/><br/>
+DISTRICT &nbsp; <input type="text" placeholder="district" name="ds"/>&nbsp;
+STATE &nbsp; <input type="text" placeholder="State" name="st"/>&nbsp;<br/><br/>
+CITY &nbsp; <input type="text" placeholder="City" name="ct"/>&nbsp;
+ZIPCODE&nbsp;<input type="text" placeholder="Zipcode" name="zp"/>&nbsp;
+</td></tr>
+
+<tr>
+<td><b>MOBILE NUMBER*:</b><br/><br/>
+<input type="text" placeholder="ex.7708429039" maxlength="10" name="mb"/>
+</td></tr>
+
+<tr>
+<td><b>DATE OF BIRTH :</b><br/><br/>
+<select><option>DAY</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>&nbsp;&nbsp;
+</select>
+
+<select><option>MONTH</option>
+<option>JAN</option>
+<option>FEB</option>
+<option>MAR</option>
+<option>APR</option>
+<option>MAY</option>
+<option>JUN</option>
+<option>JUL</option>
+<option>AUG</option>
+<option>SEP</option>
+<option>OCT</option>
+<option>NOV</option>
+<option>DEC</option>
+</select>&nbsp;&nbsp;
+
+
+<select><option>YEAR</option>
+<option>1995</option>
+<option>1996</option>
+<option>1997</option>
+<option>1998</option>
+<option>1999</option>
+<option>2000</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><b>GENDER*</b><br/><br/>
+<input type="radio" name="rd">MALE<br/>
+<input type="radio" name="rd">FEMALE<br/>
+</td></tr>
+<tr>
+<td><b> EMAIL_ID*</b><br/><br/>
+<input type="text" name="em"/><br/><br/
+</td></tr>
+<tr>
+<td><b>PASSWORD*</b><br/><br/>
+New_password&nbsp;<input type="password" name="pwd1"/>&nbsp;
+Confirm_password&nbsp; :<input type="password" name="pwd2"/><br/><br/>
+</td></tr>
+<tr>
+<td>
+<input type="checkbox" name="cb" checked="on"><b>I accept all the terms and conditions*</b>
+</td></tr>
+<tr>
+<td>
+<font size="3"><input type="submit" class="a"/>
+</form>
+</table>
+</center>
+</body>
+</html>
